@@ -69,7 +69,7 @@ console.log(addNumber(15, 16));
 // Void
 
 function log(message: string | number): void {  // 'void' because the function doesn't do anything
-    console.log(message);    
+    console.log(message);
 }
 log('Hello dear John!');
 log(5);
@@ -91,7 +91,7 @@ user1.id = 2;
 console.log(user1.id);
 
 type Point = number | string;
-const p1: Point = 1; 
+const p1: Point = 1;
 
 interface MathFunc {
     (x: number, y: number): number
@@ -100,7 +100,61 @@ interface MathFunc {
 const add: MathFunc = (x: number, y: number): number => x + y
 const sub: MathFunc = (x: number, y: number): number => x - y
 
+interface PersonInterface {  
+    id: number               
+    name: string 
+    register(): string       
+}
+
+
+
 // Classes
+
+class Person implements PersonInterface{                          // classes are used to create object
+    id: number                          // in this example this property is public, and we can acces it outside the class
+    name: string                        // in this example this property is public, and we can acces it outside the class
+                                        //private id: number  if we want it private 
+
+    constructor(id: number, name: string) {
+        this.id = id
+        this.name = name
+    }
+
+    register() {
+        return `${this.name} is now registered`
+    }
+}
+
+const brad = new Person(1, 'Brad Traversy')
+const mike = new Person(2, "Mike Jordan")
+console.log(brad, mike);
+brad.id = 5
+console.log(brad, mike);
+console.log(brad.register());
+
+
+// Subclasses
+class Employee extends Person {
+    position: string
+
+    constructor(id: number, name: string, position: string) {
+        super(id, name)
+        this.position = position
+    }
+}
+const emp = new Employee(3, 'George', 'manager')
+console.log(emp.register());
+
+// Generics
+function getArray<T>(items: T[]): T[] {
+    return new Array().concat(items)
+}
+
+let numArray = getArray<number>([1,2,3,4])
+let stringArray = getArray<string>(['brad', 'mike', 'george'])
+
+numArray.push(12)
+
 
 
 
