@@ -10,8 +10,9 @@ export class NavigationComponent {
 
   activeUsers = [{name: 'Mitko', age: 29}, {name: 'Pesho', age: 27}, {name: 'Mariya', age: 41}, {name: 'Katya', age: 32},]
 
-  handleClick(): void {
-    this.isActive = !this.isActive;
-       
+  handleClick(event: Event): void {
+    console.log(event);
+    
+    this.isActive = !this.isActive;       
   }
 }
