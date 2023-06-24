@@ -1,7 +1,5 @@
-<app-navigation />
-<div>Hello World! {{ title }}</div>
-<hr />
-
-
-
-
+<app-navigation
+  [title]="title"
+  [activeUsers]="users"
+  (onChildOutput)="outputChildHandler()"
+/>
