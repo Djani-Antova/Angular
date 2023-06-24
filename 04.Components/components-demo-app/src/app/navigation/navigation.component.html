@@ -1,9 +1,7 @@
 <div id="nav">
   <span *ngIf="isActive">
     <ul>
-        <li>ActiveLists1</li>
-        <li>ActiveLists2</li>
-        <li>ActiveLists3</li>
+        <li *ngFor="let user of activeUsers">{{user.name + ": " + user.age }}</li>
     </ul>
   </span>
 
