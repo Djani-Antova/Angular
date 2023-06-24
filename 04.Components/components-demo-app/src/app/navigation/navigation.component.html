@@ -1,0 +1,20 @@
+<div id="nav">
+  <span *ngIf="isActive">
+    <ul>
+        <li>ActiveLists1</li>
+        <li>ActiveLists2</li>
+        <li>ActiveLists3</li>
+    </ul>
+  </span>
+
+  <span *ngIf="!isActive">
+    <div>Nothing is active (: </div>
+  </span>
+
+  <!-- <span>{{toggle ? "SHOW" : "HIDE"}}</span> -->
+
+  <!-- <span *ngIf="toggle">HIDE</span>
+    <span *ngIf="!toggle">SHOW</span> -->
+
+  <button (click)="handleClick()">Make {{isActive ? "Inactive" : "Active"}}</button>
+</div>
