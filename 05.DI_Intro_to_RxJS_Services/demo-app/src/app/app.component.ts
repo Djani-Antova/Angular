@@ -16,4 +16,17 @@ export class AppComponent {
     {name: 'Pesho', age: 66},
     {name: 'Penka', age: 55},
   ]
+
+  
+
+  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
+    const user = {
+      name: inputName.value,
+      age: Number(inputAge.value)
+    };
+    this.users = [...this.users, user]  //smenyame referenziyata s dobaveniq nov user
+    //this.users.push(user);
+    inputName.value = '';
+    inputAge.value = '';
+  }
 }
