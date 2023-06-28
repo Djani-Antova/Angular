@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './types/User';
+
 
 @Component({
   selector: 'app-root',
@@ -6,12 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'domo-app';
+  title = 'demo-app';
 
-  users = [
-    {name: 'Ivan, age: 21'},
-    {name: 'Mitko, age: 29'},
-    {name: 'Pesho, age: 66'},
-    {name: 'Penka, age: 55'},
+  users: User[] = [
+    {name: 'Ivan', age: 21},
+    {name: 'Mitko', age: 29},
+    {name: 'Pesho', age: 66},
+    {name: 'Penka', age: 55},
   ]
 }
