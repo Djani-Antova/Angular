@@ -17,6 +17,15 @@ export class AppComponent {
     {name: 'Penka', age: 55},
   ]
 
+  constructor() {
+    setInterval(() => {
+      this.users.push({
+        name: "DemoName",
+        age: 0,
+      })
+    })
+  }
+
   
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {

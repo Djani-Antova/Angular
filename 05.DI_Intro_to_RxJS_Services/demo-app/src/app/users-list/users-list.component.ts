@@ -9,4 +9,9 @@ import { User } from '../types/User';
 })
 export class UsersListComponent {
 @Input() users: User [] = [];
+
+ngOnChanges() {
+  console.log('invoked from ngOnVhanges');
+  
+}
 }
