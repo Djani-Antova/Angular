@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
 import { User } from './types/User';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -34,16 +35,31 @@ export class AppComponent {
 //   .then()
 //   .then();
 
-
-// async analogy
-Promise.resolve(100)
-  .then((d) => d * 10)
-  .then((x) => console.log(x));
-
-
 // sync analogy Promise
 [1].map((x) => x * 2).map((x) => x * 10);
+
+// async analogy Promise
+Promise.resolve(100)
+  .then((d) => d * 10)
+  .then((x) => console.log('data from promise: ',x));
 
 
 // sync analogy Observable
 [1, 2, 3, 4].map((x) => x * 2).map((x) => x * 10);
+
+// sync analogy Observable
+const o = new Observable(observer =>{
+  // observer.next(1000);
+  // observer.next(2000);
+  // observer.next(3000);
+
+  let counter = 0;
+  setInterval(() => {
+    observer.next(counter++)
+  }, 2000)
+});
+
+o.subscribe(data => {
+  console.log('data from observer: ', data);
+  
+})
