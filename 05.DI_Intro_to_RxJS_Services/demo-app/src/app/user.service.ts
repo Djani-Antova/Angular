@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+//import { Injectable } from '@angular/core';
 import { User } from './types/User';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({        //if dependency is not injected here, we do it either in app.module or in a speccific component, depending on the needs
+//   providedIn: 'root'
+// })
 export class UserService {
 
   users: User[] = [
@@ -21,8 +21,7 @@ export class UserService {
       });
       console.log('User has been added!');      
     }, 3000)
-  }
-  
+  }  
   
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
     const user = {
