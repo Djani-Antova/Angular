@@ -19,7 +19,7 @@ export class UserService {
         name: "DemoName",
         age: 0,
       });
-      console.log('User has been added!');      
+      //console.log('User has been added!');      
     }, 3000)
   }  
   
@@ -33,4 +33,5 @@ export class UserService {
     inputName.value = '';
     inputAge.value = '';
   }
+
 }

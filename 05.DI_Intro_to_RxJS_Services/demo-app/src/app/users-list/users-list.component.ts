@@ -15,7 +15,7 @@ constructor(private cd: ChangeDetectorRef) {
 }
 
 ngOnChanges() {
-  console.log('invoked from ngOnVhanges');
+  //console.log('invoked from ngOnVhanges');
   
 }
 
