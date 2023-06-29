@@ -23,7 +23,7 @@ export class UserService {
     }, 3000)
   }
   
-
+  
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
     const user = {
       name: inputName.value,

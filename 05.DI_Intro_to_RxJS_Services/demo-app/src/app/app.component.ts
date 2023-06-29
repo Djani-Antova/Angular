@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './user.service';
+import { User } from './types/User';
 
 
 @Component({
@@ -9,8 +10,17 @@ import { UserService } from './user.service';
 })
 export class AppComponent {
   title = 'demo-app';
+  appUsers: User[] = [];
 
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService) {
+    this.appUsers = this.userService.users;
+  }
+  
+  setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
+    // we create this in order to be ble to do some other things
+    this.userService.addUser(inputName, inputAge); 
+    this.appUsers = this.userService.users;
+  }
 }
 
 // class Wallet {
