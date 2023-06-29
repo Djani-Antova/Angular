@@ -54,9 +54,14 @@ const o = new Observable(observer =>{
   // observer.next(3000);
 
   let counter = 0;
-  setInterval(() => {
+  const timer = setInterval(() => {
     observer.next(counter++)
-  }, 2000)
+  }, 2000);
+
+// this code is invoked on destroy
+  return() => {
+    clearInterval(timer)
+  }
 });
 
 o.subscribe(data => {
