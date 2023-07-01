@@ -1,25 +1,35 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
-import { User } from '../types/User';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
+import { User } from '../types/JsonPlaceholderUser';
 
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush, //za da se dobavyat sled OnPush 
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent {
-@Input() users: User [] = [];
+  @Input() users: User[] = [];
 
-constructor(private cd: ChangeDetectorRef) {
+  constructor(private cd: ChangeDetectorRef) {}
 
+  ngOnChanges() {
+    // console.log('invoked from ngOnChanges!');
+  }
+
+  refresh() {
+    this.cd.detectChanges();
+  }
 }
 
-ngOnChanges() {
-  //console.log('invoked from ngOnVhanges');
-  
-}
+// CoffeMachineBase
+// CoffeMachineDelongi extend CoffeMachineBase
+// CoffeMachineLavazza extend CoffeMachineBase
 
-refresh() {
-  this.cd.detectChanges();
-}
-}
+// CoffeMachineBase.makeCoffee();
+// CoffeMachineDelongi.makeCoffee();
+// CoffeMachineLavazza.makeCoffee();
