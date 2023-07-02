@@ -5,20 +5,26 @@ import { Theme } from '../types/theme';
 @Component({
   selector: 'app-themes-list',
   templateUrl: './themes-list.component.html',
-  styleUrls: ['./themes-list.component.css']
+  styleUrls: ['./themes-list.component.css'],
 })
-export class ThemesListComponent implements OnInit{
-  themesList: Theme[] = []
+export class ThemesListComponent implements OnInit {
+  themesList: Theme[] = [];
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     // this returns promise, as if we write this.apiService.getThemes().then(data => data)
-    this.apiService.getThemes().subscribe(themes => {
-
-      
-      this.themesList = themes;     
+    this.apiService.getThemes().subscribe({
+      next: (themes) => {
+        this.themesList = themes;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error(`Error: ${err}`);      
+        
+      },
     });
-
-}
+  }
 }
