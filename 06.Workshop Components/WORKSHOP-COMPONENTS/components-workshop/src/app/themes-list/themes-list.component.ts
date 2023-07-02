@@ -10,6 +10,7 @@ export class ThemesListComponent implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
+    // this returns promise, as if we write this.apiService.getThemes().then(data => data)
     this.apiService.getThemes().subscribe(themes => {
       console.log({themes});      
     });
