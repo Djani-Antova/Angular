@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { routes } from './app-routing.module';
+import { AppRoutingModule, routes } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
@@ -23,7 +23,9 @@ import { RouterModule } from '@angular/router'
     CoreModule, 
     UserModule, 
     TodoModule,
-    RouterModule.forRoot(routes)
+    //RouterModule.forRoot(routes),
+    AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
