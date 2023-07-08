@@ -14,4 +14,7 @@ import { Observable } from 'rxjs';
     fetchUsers(): Observable<User[]> {
       return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
     }
+    fetchSingleUser(id: number): Observable<User> {
+      return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
+    }
   }
