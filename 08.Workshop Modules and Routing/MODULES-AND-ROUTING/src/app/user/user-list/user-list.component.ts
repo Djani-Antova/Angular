@@ -19,6 +19,10 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadUsers()
+  }
+  
+  loadUsers(): void {
     this.globalLoaderService.showLoder()
 
     // for testing purposes
@@ -34,7 +38,7 @@ export class UserListComponent implements OnInit {
           }
         });     
     // }, 3000)
-    }    
+  }
   }
 
 
