@@ -10,7 +10,7 @@ export class UserService {
   USER_KEY = '[user]';
 
   get isLogged(): boolean {
-    return !!this.user; // to reassure it's boolean and not sometype of falsu cases that we are not interesed in
+    return !!this.user; // to !reassure it's boolean and not sometype of falsu cases that we are not interesed in
   }
 
   constructor() { 
