@@ -19,5 +19,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
   imports: [BrowserModule, AppRoutingModule, CoreModule, HttpClientModule, SharedModule, UserModule, ThemeModule],
   providers: [],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}
