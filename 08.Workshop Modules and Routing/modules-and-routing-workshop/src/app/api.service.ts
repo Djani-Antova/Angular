@@ -11,11 +11,17 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getTheme(id:string) {
+    const { appUrl } = environment;
+ 
+    return this.http.get<Theme>(`${appUrl}/themes/${id}`)
+  }
+
   getThemes() {
     const { appUrl } = environment;
-
-    // as if we write fetch('url')
+   // as if we write fetch('url')
     // but HttpClient is working with  abstraction and is much better
+   
     return this.http.get<Theme[]>(`${appUrl}/themes`)
   }
 
