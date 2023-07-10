@@ -5,7 +5,7 @@ import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 
 @NgModule({
-  declarations: [NewThemeComponent, CurrentThemeComponent],
-  imports: [CommonModule, ThemeRoutingModule],
+  declarations: [NewThemeComponent, CurrentThemeComponent, ],
+  imports: [CommonModule, ThemeRoutingModule, ],
 })
 export class ThemeModule {}
