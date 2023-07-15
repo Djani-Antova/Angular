@@ -1,0 +1,44 @@
+<nav>
+    <dir appMyRouterLink="/login">Link to Login</dir>
+    <dir appMyRouterLink="/register">Link to Register</dir>
+  </nav>
+  
+  <hr />
+  <!-- PlayGROUND -->
+  <!-- Structural directives are always with star '*'' prefix -->
+  <div *ngIf="true">Simple Div 1</div>
+  <hr />
+  
+  <!--  star '*'' prefix refers to  ng-template-->
+  <ng-template [ngIf]="true">
+    <div>Simple Div 1.1</div>
+  </ng-template>
+  
+  <!-- Custom Structural Directives -->
+  <button (click)="toggle()">Toggle my state</button>
+  
+  <!-- Usage 1 -->
+  <div *appMyStructural="isShown">Structural Directives (Usage 1)</div>
+  
+  <!-- Usage 2 -->
+  <ng-template
+    [appMyStructural]="isShown"
+    let-addedContext="addedContext"
+    let-val
+    #myDirectiveRef="appMyStructural"
+  >
+    <!-- Usage 2 -->
+    <div>Structural Directives (Usage 2)</div>
+    <h4>Added Context: {{ addedContext }} : {{ val }}</h4>
+  </ng-template>
+  
+  <!-- Usage 3 -->
+  <ng-template #tmp>
+    <div>Structural Directives (Usage 3)</div>
+  </ng-template>
+  
+  <ng-container [appMyStructural]="isShown" [myTmpProp]="tmp"/>
+  
+  
+  
+  
