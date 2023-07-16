@@ -16,13 +16,16 @@
           #inputEmail="ngModel"
           ngModel
           required
-
+          [appEmail]="appEmailDomains"
         />
       </p>
       <ng-container *ngIf="inputEmail.touched">
-          <p class="error">Email is required!</p>
-          <p class="error">Email is not valid!</p>
+        <p class="error" *ngIf="inputEmail.errors?.['required']">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
       </ng-container>
+     
 
       <p class="field field-icon">
         <label for="password"
@@ -34,16 +37,14 @@
           id="password"
           placeholder="******"
           #inputPassword
-          ngModel
+          ngModel="ngModel"
           required
         />
       </p>
       <p class="error">Password is required!</p>
       <p class="error">Password must be at least 4 characters!</p>
 
-      <button>
-        Login
-      </button>
+      <button>Login</button>
 
       <p class="text-center">
         Have an account?
@@ -52,5 +53,5 @@
     </fieldset>
   </form>
 
-  {{form.value | json}}
+  {{ form.value | json }}
 </div>
