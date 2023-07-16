@@ -1,1 +1,1 @@
-export const DEFAULT_DOMAIN_EMAILS = ['bg', 'com'];
+export const DEFAULT_EMAIL_DOMAINS = ['bg', 'com'];

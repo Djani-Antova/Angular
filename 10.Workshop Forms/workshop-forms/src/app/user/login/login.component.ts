@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { DEFAULT_DOMAIN_EMAILS } from 'src/app/shared/constants';
+import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { DEFAULT_DOMAIN_EMAILS } from 'src/app/shared/constants';
 })
 export class LoginComponent {
 
-  appEmailDomains = DEFAULT_DOMAIN_EMAILS;
+  appEmailDomains = DEFAULT_EMAIL_DOMAINS;
 
   constructor(private userService: UserService, private router:Router) { }
 
