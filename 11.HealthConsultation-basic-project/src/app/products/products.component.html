@@ -1,0 +1,26 @@
+<!-- <div *ngFor="let item of [1,3,5]">
+    <p>Number is: {{item}}</p>
+</div> -->
+
+
+<div *ngFor="let p of products">
+    <div class="product-container" [ngStyle]="{backgroundColor: p.available === 'Available' ? '#D5F5D3' : '#FADBD8'}">
+        <div>Consultant's details: </div>
+        <div>Name: {{p.username}} </div>
+        <div>email:{{p.email}}, age: {{p.age}}</div>
+        <div class="details" [ngStyle]="{color: p.available === 'Available' ? 'Green' : 'Red'}">Person is
+            {{p.available}}</div>
+
+        <div class="options">
+            <button class="btn btn-success">Show details</button>
+            <button class="btn btn-warning" *ngIf="p.available === 'Available'; else notifyme">Contact Now</button>
+            <ng-template #notifyme>
+                <button class="btn btn-danger" >Notify me</button>
+            </ng-template>
+
+        </div>
+
+    </div>
+    <hr />
+
+</div>
