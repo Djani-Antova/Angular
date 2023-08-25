@@ -1,0 +1,30 @@
+<div>
+    <app-search />
+    <app-filter 
+    [all]="getTotalProducts()"
+    [masculine]="getTotalMasculineProducts()"
+    [feminine]="getTotalFeminineProducts()"></app-filter>
+</div>
+
+<div class="product-container" *ngFor="let product of products">
+    <div class="product-card">
+        <div>            
+            <img [src]= "product.image" alt="Product Image" style="width: 220px; height: 140px;">
+        </div>
+      <div class="product-name"><h4>{{product.name}}</h4></div>
+      <div class="product-description"><p>{{product.description.slice(0, 70)}}....</p></div>
+      <div class="details">
+          <div class="product-type" [ngStyle]="{color: product.type === 'Masculine' ? 'Green' : 'Red' }">{{product.type}}</div>
+          <div class="product-price"><b>Price:</b> €{{product.price}}</div>        
+      
+      
+        </div>
+     
+      <div class="product-buttons">
+          <button class="btn btn-buy">Buy Now</button>
+          <button class="btn btn-show">Show Deatails</button>        
+      </div>
+    </div>
+  
+  </div>
+  

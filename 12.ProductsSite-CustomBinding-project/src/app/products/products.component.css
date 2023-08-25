@@ -1,0 +1,37 @@
+.product-container {
+display: inline-flex;
+
+
+}
+.product-card {
+    width: 220px;
+    height: 320px;
+    margin: 10px 10px;
+    background-color: #F8F9F9;
+   
+}
+.product-name {
+    text-align: center;
+}
+.product-description {
+    margin: 10px 0px; 
+    padding: 5px 10px;
+    font-size: 12px;
+    /* text-align: center; */
+}
+.details {
+    display: flex;
+    margin: 10px 0px; 
+}
+.product-type {
+    width: 50%;
+    font-weight: bold;
+}
+.product-buttons {
+    display: flex;
+}
+/* .btn {
+  
+} */
+
+
